@@ -1,6 +1,9 @@
 import React from 'react';
 import { get } from 'axios';
-import Header from '../organisms/Header/Index';
+import Header from '../../organisms/Header/Index';
+import Footer from '../../organisms/Footer/Index';
+import UserContent from '../../organisms/UserContent/Index';
+import './Home.css';
 
 const URLApi = `http://localhost:8080/usersPost`;
 const getPost = async (setPost, setLoading) => {
@@ -26,15 +29,22 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="container bg-info text-dark">
-            {loading ?
-                <p>Loading</p> :
+        <>
+            <Header />
 
-                <div>
-                    <Header usersTotal={post.length} />
+            <div className="container">
+                <div className="content">
+                    {loading ?
+                        <p>Loading</p> :
+                        <>
+                            <UserContent users={post} />
+                        </>
+                    }
                 </div>
-            }
-        </div>
+            </div>
+
+            <Footer />
+        </>
     )
 };
 

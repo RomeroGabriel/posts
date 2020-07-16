@@ -1,0 +1,6 @@
+.content {
+    min-height: calc(100vh - 44px);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}

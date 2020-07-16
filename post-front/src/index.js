@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './Components/pages/Home';
+import Home from './Components/pages/Home/Home';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
