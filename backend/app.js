@@ -1,8 +1,11 @@
+require('./config/config');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
+
+require('dotenv').config();
 
 var usersRouter = require('./routes/Users');
 
@@ -17,4 +20,9 @@ app.use(cors());
 
 app.use('/usersPost', usersRouter);
 
-module.exports = app;
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Started up at port ${port} and env ${process.env.NODE_ENV}`);
+});
+
+module.exports = { app };
