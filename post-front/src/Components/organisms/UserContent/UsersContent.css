@@ -1,0 +1,6 @@
+.usersContent {
+    display: flex;
+    flex-flow: column wrap;
+    min-height: calc(100vh - 112px);
+    padding-top: 50px;
+}

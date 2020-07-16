@@ -3,7 +3,6 @@ import { get } from 'axios';
 import Header from '../../organisms/Header/Index';
 import Footer from '../../organisms/Footer/Index';
 import UserContent from '../../organisms/UserContent/Index';
-import './Home.css';
 
 const URLApi = `http://localhost:8080/usersPost`;
 const getPost = async (setPost, setLoading) => {
@@ -33,14 +32,12 @@ const Home = () => {
             <Header />
 
             <div className="container">
-                <div className="content">
-                    {loading ?
-                        <p>Loading</p> :
-                        <>
-                            <UserContent users={post} />
-                        </>
-                    }
-                </div>
+                {loading ?
+                    <p>Loading</p> :
+                    <>
+                        <UserContent users={post} />
+                    </>
+                }
             </div>
 
             <Footer />
