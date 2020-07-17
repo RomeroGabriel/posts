@@ -20,9 +20,9 @@ app.use(cors());
 
 app.use('/usersPost', usersRouter);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.listen(port, () => {
-    console.log(`Started up at port ${port} and env ${process.env.NODE_ENV}`);
+    console.log(`Started up at port ${port}`);
 });
 
 module.exports = { app };
