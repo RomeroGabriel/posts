@@ -1,11 +1,10 @@
 {
     "production": {
-        "PORT": 8080
+        "PORT": 8080,
+        "URLBase": "http://jsonplaceholder.typicode.com/"
     },
     "development": {
-        "PORT": 3000
-    },
-    "SPOTIFY_clientId": "4914eed7dfac476f86a94b7a516d1342",
-    "SPOTIFY_clientSecret": "51692dbce151477295511709260953eb",
-    "SPOTIFY_redirectUri": "https://auth.expo.io/@marcoantoniocanhas/jamplug"
+        "PORT": 3000,
+        "URLBase": "http://jsonplaceholder.typicode.com/"
+    }
 }

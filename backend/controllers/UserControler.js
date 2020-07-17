@@ -1,13 +1,11 @@
 const { get } = require('axios').default;
-const URLUsers = `http://jsonplaceholder.typicode.com/users`;
-const URLSPost = `http://jsonplaceholder.typicode.com/posts`;
 
 module.exports = {
     getPostUser: async (req, res) => {
         try {
             const [users, post] = await Promise.all([
-                get(URLUsers),
-                get(URLSPost),
+                get(`${process.env.URLBase}users`),
+                get(`${process.env.URLBase}posts`),
             ]);
             const usersFiltered = users.data.filter((d) => {
                 return d.company.name.toLowerCase().includes("group");

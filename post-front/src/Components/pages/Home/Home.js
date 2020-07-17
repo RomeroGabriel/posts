@@ -3,19 +3,19 @@ import { get } from 'axios';
 import Header from '../../organisms/Header/Index';
 import Footer from '../../organisms/Footer/Index';
 import UserContent from '../../organisms/UserContent/Index';
+import './Home.css';
 
-const URLApi = `http://localhost:8080/usersPost`;
+const URLApi = process.env.REACT_APP_API_URL;
+
 const getPost = async (setPost, setLoading) => {
     try {
-        const { data } = await get(URLApi);
-        // console.log(`Data: ${JSON.stringify(data)}`);
+        const { data } = await get(`${URLApi}usersPost`);
         if (data.sucess)
             setPost(data.result);
         setLoading(false);
     }
     catch (e) {
         setLoading(false);
-        // console.log(`Error: ${JSON.stringify(e)}`);
     }
 };
 
@@ -32,12 +32,12 @@ const Home = () => {
             <Header />
 
             <div className="container">
-                {loading ?
-                    <p>Loading</p> :
-                    <>
+                <div className="usersContent">
+                    {loading ?
+                        <p>Loading</p> :
                         <UserContent users={post} />
-                    </>
-                }
+                    }
+                </div>
             </div>
 
             <Footer />
